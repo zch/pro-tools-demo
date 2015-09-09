@@ -25,16 +25,7 @@ public class MyUI extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        FileTree fileTree = new FileTree();
-        MainView mainView = new MainView();
-
-        fileTree.addValueChangeListener((e)->mainView.open((File)fileTree.getValue()));
-
-        HorizontalSplitPanel split = new HorizontalSplitPanel();
-        setContent(split);
-        split.setFirstComponent(fileTree);
-        split.setSecondComponent(mainView);
-        split.setSplitPosition(20);
+        setContent(new DemoViewImpl());
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

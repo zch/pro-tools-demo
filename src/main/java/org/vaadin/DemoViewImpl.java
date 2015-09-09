@@ -1,33 +1,29 @@
 package org.vaadin;
 
-import com.vaadin.addon.charts.Chart;
-import com.vaadin.addon.charts.model.Configuration;
-import com.vaadin.addon.charts.model.ListSeries;
-import com.vaadin.addon.charts.model.Title;
-import com.vaadin.addon.spreadsheet.Spreadsheet;
-import com.vaadin.event.Action;
-import com.vaadin.ui.VerticalLayout;
+import java.io.File;
+import java.io.IOException;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.ss.util.CellReference;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import com.vaadin.addon.charts.model.Configuration;
+import com.vaadin.addon.charts.model.ListSeries;
+import com.vaadin.data.util.FilesystemContainer;
+import com.vaadin.event.Action;
 
-public class MainView extends VerticalLayout {
+@SuppressWarnings("serial")
+public class DemoViewImpl extends DemoView {
 
-    private final Action LINECHART_ACTION = new Action("Plot a line chart");
+	private final Action LINECHART_ACTION = new Action("Plot a line chart");
 
-    private final Spreadsheet spreadsheet;
-    private Chart chart = null;
-
-    public MainView() {
-        setSizeFull();
-        spreadsheet = new Spreadsheet();
-        addComponent(spreadsheet);
+	public DemoViewImpl() {
+		super();
+        fileTree.setContainerDataSource(new FilesystemContainer(new File("/Users/jonatan/Documents/xlsx"), true));
+        fileTree.setItemCaptionPropertyId(FilesystemContainer.PROPERTY_NAME);
+        fileTree.addValueChangeListener((e) -> open((File) fileTree.getValue()));
+        
         spreadsheet.addActionHandler(new Action.Handler() {
             @Override
             public Action[] getActions(Object target, Object sender) {
@@ -38,29 +34,24 @@ public class MainView extends VerticalLayout {
             public void handleAction(Action action, Object sender, Object target) {
                 if (action == LINECHART_ACTION) {
                     plotLineChart();
-                }p
+                }
             }
         });
-    }
-
-    public void open(File file) {
+	}
+	
+    private void open(File file) {
         try {
             spreadsheet.read(file);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
+    
     private void plotLineChart() {
-        if (chart != null) {
-            removeComponent(chart);
-        }
-        chart = new Chart();
+    		chart.setConfiguration(new Configuration());
         chart.getConfiguration().setTitle("");
         spreadsheet.getCellSelectionManager().getCellRangeAddresses().forEach(this::addDataFromRangeAddress);
-
-        chart.setSizeFull();
-        addComponent(chart);
+        chart.drawChart();
     }
 
     private void addDataFromRangeAddress(CellRangeAddress selection) {
