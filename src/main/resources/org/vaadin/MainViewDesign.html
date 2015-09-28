@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
  <head> 
+  <meta charset="UTF-8" name="package-mapping" content="com_vaadin_addon_charts:com.vaadin.addon.charts"> 
+  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:929,&quot;PAPER_HEIGHT&quot;:548,&quot;PAPER_SCROLL_LEFT&quot;:2010,&quot;PAPER_SCROLL_TOP&quot;:2201,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}"> 
   <meta charset="UTF-8" name="package-mapping" content="com_vaadin_addon_spreadsheet:com.vaadin.addon.spreadsheet"> 
   <meta charset="UTF-8" name="package-mapping" content="com_vaadin_addon_charts:com.vaadin.addon.charts"> 
   <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:929,&quot;PAPER_HEIGHT&quot;:548,&quot;PAPER_SCROLL_LEFT&quot;:2010,&quot;PAPER_SCROLL_TOP&quot;:2201,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}"> 
@@ -15,7 +17,12 @@
  </head> 
  <body> 
   <v-horizontal-split-panel primary-style-name="v-splitpanel-horizontal" split-position="20%"> 
-   <v-tree item-caption-mode="id" width-full="true" _id="fileTree"></v-tree> 
+   <v-vertical-layout primary-style-name="v-verticallayout"> 
+    <v-tree item-caption-mode="id" width-full="true" _id="fileTree"></v-tree> 
+    <v-button icon="fonticon://FontAwesome/f093" width-full="true" plain-text="" _id="upload" :center="">
+      Upload 
+    </v-button> 
+   </v-vertical-layout> 
    <v-vertical-layout primary-style-name="v-verticallayout" size-full="true" _id="content"></v-vertical-layout> 
   </v-horizontal-split-panel>  
  </body>

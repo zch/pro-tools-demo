@@ -14,7 +14,7 @@ public class CompanyContainer extends HierarchicalContainer {
         addCompany("Aviv", "Aviv.xlsx");
         addCompany("Microsoft", "Microsoft.xls");
         addCompany("P & G", "PG.xls");
-        addCompany("Preston Smalley", "Preston Smalley.xls");
+        addCompany("Preston Smalley", "PrestonSmalley.xls");
     }
 
     public void addCompany(String companyName, String fileName) {

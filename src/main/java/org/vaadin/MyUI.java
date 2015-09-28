@@ -16,16 +16,24 @@ import com.vaadin.ui.VerticalLayout;
 
 import java.io.File;
 
-/**
- *
- */
 @Theme("mytheme")
 @Widgetset("org.vaadin.MyAppWidgetset")
 public class MyUI extends UI {
 
+    private CompanyContainer companyContainer;
+
     @Override
     protected void init(VaadinRequest vaadinRequest) {
+        companyContainer = new CompanyContainer();
         setContent(new MainImpl());
+    }
+
+    public static MyUI getCurrent() {
+        return (MyUI) UI.getCurrent();
+    }
+
+    public CompanyContainer getCompanyContainer() {
+        return companyContainer;
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

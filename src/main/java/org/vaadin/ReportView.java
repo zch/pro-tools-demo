@@ -66,9 +66,9 @@ public class ReportView extends VerticalLayout {
         });
     }
 
-    public void open(File file) {
+    public void open(String name, File file) {
         try {
-            header.setValue(file.getName());
+            header.setValue(name);
             spreadsheet.read(file);
         } catch (IOException e) {
             e.printStackTrace();
