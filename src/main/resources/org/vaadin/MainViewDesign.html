@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html>
- <head> 
-  <meta charset="UTF-8" name="package-mapping" content="com_vaadin_addon_charts:com.vaadin.addon.charts"> 
-  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:929,&quot;PAPER_HEIGHT&quot;:548,&quot;PAPER_SCROLL_LEFT&quot;:2010,&quot;PAPER_SCROLL_TOP&quot;:2201,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}"> 
-  <meta charset="UTF-8" name="package-mapping" content="com_vaadin_addon_spreadsheet:com.vaadin.addon.spreadsheet"> 
-  <meta charset="UTF-8" name="package-mapping" content="com_vaadin_addon_charts:com.vaadin.addon.charts"> 
-  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:929,&quot;PAPER_HEIGHT&quot;:548,&quot;PAPER_SCROLL_LEFT&quot;:2010,&quot;PAPER_SCROLL_TOP&quot;:2201,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}"> 
-  <meta charset="UTF-8" name="package-mapping" content="com_vaadin_addon_spreadsheet:com.vaadin.addon.spreadsheet"> 
-  <meta charset="UTF-8" name="package-mapping" content="com_vaadin_addon_charts:com.vaadin.addon.charts"> 
-  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:929,&quot;PAPER_HEIGHT&quot;:548,&quot;PAPER_SCROLL_LEFT&quot;:2010,&quot;PAPER_SCROLL_TOP&quot;:2201,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}"> 
-  <meta charset="UTF-8" name="package-mapping" content="com_vaadin_addon_spreadsheet:com.vaadin.addon.spreadsheet"> 
-  <meta charset="UTF-8" name="package-mapping" content="com_vaadin_addon_charts:com.vaadin.addon.charts">
-  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:929,&quot;PAPER_HEIGHT&quot;:548,&quot;PAPER_SCROLL_LEFT&quot;:2010,&quot;PAPER_SCROLL_TOP&quot;:2201,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+ <head>
+  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:806,&quot;PAPER_HEIGHT&quot;:548,&quot;PAPER_SCROLL_LEFT&quot;:2022,&quot;PAPER_SCROLL_TOP&quot;:2214,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
   <meta charset="UTF-8" name="package-mapping" content="com_vaadin_addon_spreadsheet:com.vaadin.addon.spreadsheet">
   <meta charset="UTF-8" name="package-mapping" content="com_vaadin_addon_charts:com.vaadin.addon.charts">
  </head> 
  <body> 
-  <v-horizontal-split-panel primary-style-name="v-splitpanel-horizontal" split-position="20%"> 
-   <v-vertical-layout primary-style-name="v-verticallayout"> 
-    <v-tree item-caption-mode="id" width-full="true" _id="fileTree"></v-tree> 
-    <v-button icon="fonticon://FontAwesome/f093" width-full="true" plain-text="" _id="upload" :center="">
-      Upload 
-    </v-button> 
-   </v-vertical-layout> 
-   <v-vertical-layout primary-style-name="v-verticallayout" size-full="true" _id="content"></v-vertical-layout> 
-  </v-horizontal-split-panel>  
+  <v-horizontal-layout style-name="valo-menu-responsive" responsive="true" size-full="true"> 
+   <v-css-layout style-name="valo-menu"> 
+    <v-css-layout style-name="valo-menu-part"> 
+     <v-horizontal-layout style-name="valo-menu-title" width-full="true" _id="menuTitle"> 
+      <v-label size-auto="true" _id="menuTitleLabel" :middle="" :expand="">
+        The 
+       <strong>Application</strong> 
+      </v-label> 
+     </v-horizontal-layout> 
+     <v-button icon="fonticon://FontAwesome/f03a" style-name="primary small valo-menu-toggle" plain-text="" _id="menuToggle">
+       Menu 
+     </v-button> 
+     <v-css-layout style-name="valo-menuitems" _id="menuItems"> 
+      <v-button icon="http://demo.vaadin.com/dashboard/VAADIN/themes/dashboard/img/profile-pic-300px.jpg" style-name="valo-menu-item userbutton icon-align-top" width-full="true" plain-text="" _id="userButton">
+        Rudolf Lightfoot 
+      </v-button> 
+      <v-label style-name="valo-menu-subtitle" size-auto="true" plain-text="">
+        Companies 
+      </v-label> 
+      <v-tree item-caption-mode="id" _id="fileTree"></v-tree> 
+      <v-label style-name="valo-menu-subtitle" size-auto="true" plain-text=""></v-label> 
+      <v-button icon="fonticon://FontAwesome/f093" style-name="valo-menu-item upload" plain-text="" _id="upload">
+        Upload 
+      </v-button> 
+     </v-css-layout> 
+    </v-css-layout> 
+   </v-css-layout> 
+   <v-vertical-layout spacing="true" size-full="true" margin="true" _id="content" :expand=""></v-vertical-layout> 
+  </v-horizontal-layout>  
  </body>
 </html>

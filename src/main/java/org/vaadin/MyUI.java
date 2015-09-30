@@ -4,6 +4,7 @@ import javax.servlet.annotation.WebServlet;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.annotations.Viewport;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
@@ -18,6 +19,7 @@ import java.io.File;
 
 @Theme("mytheme")
 @Widgetset("org.vaadin.MyAppWidgetset")
+@Viewport("width=device-width,initial-scale=1")
 public class MyUI extends UI {
 
     private CompanyContainer companyContainer;
