@@ -22,7 +22,7 @@ import com.vaadin.ui.declarative.Design;
 public class UploadFormDesign extends VerticalLayout {
 	protected Upload upload;
 	protected TextField companyName;
-	protected TextField description;
+	protected TextField additionalInformation;
 	protected Button cancel;
 	protected Button save;
 

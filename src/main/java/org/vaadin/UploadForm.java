@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import com.vaadin.data.Item;
 import com.vaadin.ui.Notification;
+import com.vaadin.ui.Notification.Type;
 
 public class UploadForm extends UploadFormDesign {
 
@@ -28,8 +29,10 @@ public class UploadForm extends UploadFormDesign {
         });
 
         upload.addSucceededListener((e) -> {
-            Notification.show("File successfully uploaded");
-            save.setEnabled(true);
+            if (uploadedFile.length() > 0) {
+                Notification.show("File successfully uploaded");
+                save.setEnabled(true);
+            }
         });
 
         save.addClickListener((e) -> {
@@ -38,12 +41,17 @@ public class UploadForm extends UploadFormDesign {
             i.getItemProperty(CompanyContainer.PROPERTY_NAME).setValue(
                     companyName.getValue());
             c.setChildrenAllowed(uploadedFile, false);
+            companyName.clear();
+            additionalInformation.clear();
+            Notification.show("Saved", Type.HUMANIZED_MESSAGE);
         });
 
         cancel.addClickListener((e) -> {
-            uploadedFile.delete();
+            if (uploadedFile != null) {
+                uploadedFile.delete();
+            }
             companyName.clear();
-            description.clear();
+            additionalInformation.clear();
         });
     }
 
