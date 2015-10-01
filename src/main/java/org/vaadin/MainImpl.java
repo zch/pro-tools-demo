@@ -2,8 +2,7 @@ package org.vaadin;
 
 import java.io.File;
 
-import com.vaadin.data.Container;
-import com.vaadin.ui.UI;
+import com.vaadin.ui.Tree;
 
 @SuppressWarnings("serial")
 public class MainImpl extends MainViewDesign {
@@ -14,13 +13,11 @@ public class MainImpl extends MainViewDesign {
         super();
         reportView = new ReportView();
 
-        CompanyContainer companyContainer = MyUI.getCurrent()
-                .getCompanyContainer();
-        fileTree.setContainerDataSource(companyContainer);
+        fileTree.setContainerDataSource(new CompanyContainer());
         fileTree.setItemCaptionPropertyId(CompanyContainer.PROPERTY_NAME);
         fileTree.addValueChangeListener((e) -> {
             File file = (File) fileTree.getValue();
-            String companyName = (String) companyContainer.getItem(file)
+            String companyName = (String) fileTree.getItem(file)
                     .getItemProperty(CompanyContainer.PROPERTY_NAME).getValue();
             reportView.open(companyName, file);
             content.removeAllComponents();

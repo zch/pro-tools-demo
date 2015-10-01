@@ -8,36 +8,30 @@ import com.vaadin.annotations.Viewport;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.HorizontalSplitPanel;
-import com.vaadin.ui.Label;
+import com.vaadin.ui.Tree;
 import com.vaadin.ui.UI;
-import com.vaadin.ui.VerticalLayout;
-
-import java.io.File;
 
 @Theme("mytheme")
 @Widgetset("org.vaadin.MyAppWidgetset")
 @Viewport("width=device-width,initial-scale=1")
 public class MyUI extends UI {
 
-    private CompanyContainer companyContainer;
+    private MainImpl mainContent;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        companyContainer = new CompanyContainer();
-        setContent(new MainImpl());
+        mainContent = new MainImpl();
+        setContent(mainContent);
     }
 
     public static MyUI getCurrent() {
         return (MyUI) UI.getCurrent();
     }
 
-    public CompanyContainer getCompanyContainer() {
-        return companyContainer;
+    public Tree getCompanyTree() {
+        return mainContent.fileTree;
     }
-
+    
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
