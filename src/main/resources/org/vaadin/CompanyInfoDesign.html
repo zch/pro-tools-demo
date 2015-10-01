@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:730,&quot;PAPER_HEIGHT&quot;:1443,&quot;PAPER_SCROLL_LEFT&quot;:2046,&quot;PAPER_SCROLL_TOP&quot;:2479,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:730,&quot;PAPER_HEIGHT&quot;:1358,&quot;PAPER_SCROLL_LEFT&quot;:2031,&quot;PAPER_SCROLL_TOP&quot;:2117,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
  </head> 
  <body> 
   <v-vertical-layout spacing="true" margin="true" _id="verticalLayout"> 
@@ -11,7 +11,7 @@
       Company name 
     </v-label> 
    </v-horizontal-layout> 
-   <v-horizontal-layout style-name="wrapping" spacing="true"> 
+   <v-horizontal-layout spacing="true"> 
     <v-horizontal-layout icon="fonticon://FontAwesome/f095" caption="Phone" spacing="true"> 
      <v-text-field width="3em"></v-text-field> 
      <v-text-field width="12em"></v-text-field> 
@@ -101,18 +101,15 @@
      <v-table caption="Projects" width-full="true" height="269px"></v-table> 
     </tab> 
    </v-tab-sheet> 
-   <v-horizontal-layout width-full="true"></v-horizontal-layout> 
-   <v-horizontal-layout style-name="wrapping" spacing="true" width-full="true" :middle="" :center=""> 
-    <v-button icon="fonticon://FontAwesome/f014" style-name="danger" plain-text="" _id="deleteButton" :middle="">
-      Delete 
-    </v-button> 
-    <v-button plain-text="" _id="cancelButton" :middle="" :right="" :expand="">
-      Cancel 
-    </v-button> 
-    <v-button icon="fonticon://FontAwesome/f0c7" style-name="primary" plain-text="" _id="saveButton" :middle="" :right="">
-      Save 
-    </v-button> 
-   </v-horizontal-layout> 
+   <v-button plain-text="" _id="deleteButton" :middle="">
+     Delete 
+   </v-button> 
+   <v-button plain-text="" _id="saveButton" :middle="">
+     Save 
+   </v-button> 
+   <v-button plain-text="" _id="cancelButton" :middle="" :expand="">
+     Cancel 
+   </v-button> 
   </v-vertical-layout>  
  </body>
 </html>

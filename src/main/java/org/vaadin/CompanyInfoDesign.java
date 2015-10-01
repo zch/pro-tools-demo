@@ -29,8 +29,8 @@ public class CompanyInfoDesign extends VerticalLayout {
 	protected TextField website;
 	protected TextArea notes;
 	protected Button deleteButton;
-	protected Button cancelButton;
 	protected Button saveButton;
+	protected Button cancelButton;
 
 	public CompanyInfoDesign() {
 		Design.read(this);
