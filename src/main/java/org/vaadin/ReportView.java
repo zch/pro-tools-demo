@@ -1,5 +1,13 @@
 package org.vaadin;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.ss.util.CellReference;
+
 import com.vaadin.addon.charts.Chart;
 import com.vaadin.addon.charts.model.ChartType;
 import com.vaadin.addon.charts.model.Configuration;
@@ -7,18 +15,14 @@ import com.vaadin.addon.charts.model.DataSeries;
 import com.vaadin.addon.charts.model.DataSeriesItem;
 import com.vaadin.addon.spreadsheet.Spreadsheet;
 import com.vaadin.event.Action;
+import com.vaadin.shared.ui.window.WindowMode;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Window;
 import com.vaadin.ui.themes.ValoTheme;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.util.CellRangeAddress;
-import org.apache.poi.ss.util.CellReference;
-
-import java.io.File;
-import java.io.IOException;
 
 public class ReportView extends VerticalLayout {
     private final Action PLOT_CHART_ACTION = new Action("Plot a chart");
@@ -38,6 +42,7 @@ public class ReportView extends VerticalLayout {
         header.setWidth(null);
         infoLink = new Button("Company info");
         infoLink.addStyleName(ValoTheme.BUTTON_LINK);
+        infoLink.addClickListener(e->openInfo());
         headerLayout.addComponent(header);
         headerLayout.addComponent(infoLink);
 
@@ -66,6 +71,16 @@ public class ReportView extends VerticalLayout {
         });
     }
 
+    public void openInfo() {
+        Window w = new Window();
+        w.setDraggable(false);
+        w.setResizable(false);
+        w.setSizeFull();
+        w.setModal(true);
+        w.setContent(new CompanyInfo(header.getValue()));
+        UI.getCurrent().addWindow(w);
+    }
+    
     public void open(String name, File file) {
         try {
             header.setValue(name);

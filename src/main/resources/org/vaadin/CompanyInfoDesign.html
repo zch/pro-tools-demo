@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;PAPER_WIDTH&quot;:730,&quot;PAPER_HEIGHT&quot;:1443,&quot;PAPER_SCROLL_LEFT&quot;:2046,&quot;PAPER_SCROLL_TOP&quot;:2479,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+ </head> 
+ <body> 
+  <v-vertical-layout spacing="true" margin="true" _id="verticalLayout"> 
+   <v-horizontal-layout spacing="true" width-full="true" :middle=""> 
+    <v-image source="theme://v.png" style-name="face" width="75px" _id="avatar" :middle=""></v-image> 
+    <v-label style-name="h1" plain-text="" _id="name" :middle="" :expand="">
+      Company name 
+    </v-label> 
+   </v-horizontal-layout> 
+   <v-horizontal-layout style-name="wrapping" spacing="true"> 
+    <v-horizontal-layout icon="fonticon://FontAwesome/f095" caption="Phone" spacing="true"> 
+     <v-text-field width="3em"></v-text-field> 
+     <v-text-field width="12em"></v-text-field> 
+    </v-horizontal-layout> 
+    <v-horizontal-layout icon="fonticon://FontAwesome/f1ac" caption="Fax" spacing="true"> 
+     <v-text-field width="3em"></v-text-field> 
+     <v-text-field width="12em"></v-text-field> 
+    </v-horizontal-layout> 
+   </v-horizontal-layout> 
+   <v-horizontal-layout style-name="wrapping" spacing="true"> 
+    <v-combo-box icon="fonticon://FontAwesome/f0ac" caption="Country of origin" item-caption-mode="id" width="239px" :bottom="" :center=""> 
+     <option>Option 1</option> 
+     <option>Option 2</option> 
+     <option>Option 3</option> 
+    </v-combo-box> 
+    <v-combo-box caption="Industry" item-caption-mode="id" width="245px"> 
+     <option>Option 1</option> 
+     <option>Option 2</option> 
+     <option>Option 3</option> 
+    </v-combo-box> 
+   </v-horizontal-layout> 
+   <v-horizontal-layout style-name="wrapping" spacing="true"> 
+    <v-popup-date-field caption="Incoporated" _id="birthdate"></v-popup-date-field> 
+    <v-combo-box caption="Form of corporation" item-caption-mode="id" width="245px"> 
+     <option>Option 1</option> 
+     <option>Option 2</option> 
+     <option>Option 3</option> 
+    </v-combo-box> 
+    <v-text-field caption="VAT"></v-text-field> 
+   </v-horizontal-layout> 
+   <v-text-field caption="Website" width-full="true" _id="website"></v-text-field> 
+   <v-text-area caption="Description" width-full="true" height="116px" _id="notes"></v-text-area> 
+   <v-tab-sheet style-name="framed"> 
+    <tab caption="Contact person" selected="true"> 
+     <v-vertical-layout spacing="true" margin="true"> 
+      <v-horizontal-layout style-name="wrapping" spacing="true"> 
+       <v-text-field caption="First name"></v-text-field> 
+       <v-text-field caption="Last name" width="254px"></v-text-field> 
+       <v-text-field caption="Email" width="347px"></v-text-field> 
+      </v-horizontal-layout> 
+      <v-text-field caption="Street" width-full="true"></v-text-field> 
+      <v-text-field width-full="true"></v-text-field> 
+      <v-horizontal-layout style-name="wrapping" spacing="true"> 
+       <v-text-field caption="Zip" width="8em"></v-text-field> 
+       <v-combo-box caption="City"></v-combo-box> 
+       <v-combo-box caption="Country"></v-combo-box> 
+      </v-horizontal-layout> 
+      <v-horizontal-layout caption="Phone" spacing="true"> 
+       <v-text-field width="3em"></v-text-field> 
+       <v-text-field width="12em"></v-text-field> 
+       <v-check-box caption="Mobile" :middle=""></v-check-box> 
+      </v-horizontal-layout> 
+      <v-horizontal-layout spacing="true"> 
+       <v-text-field width="3em"></v-text-field> 
+       <v-text-field width="12em"></v-text-field> 
+       <v-check-box caption="Mobile" :middle=""></v-check-box> 
+      </v-horizontal-layout> 
+     </v-vertical-layout> 
+    </tab> 
+    <tab caption="CEO"> 
+     <v-vertical-layout spacing="true" size-full="true" margin="true"> 
+      <v-horizontal-layout style-name="wrapping" spacing="true"> 
+       <v-text-field caption="First name"></v-text-field> 
+       <v-text-field caption="Last name" width="254px"></v-text-field> 
+       <v-text-field caption="Email" width="347px"></v-text-field> 
+      </v-horizontal-layout> 
+      <v-text-field caption="Street" width-full="true"></v-text-field> 
+      <v-text-field width-full="true"></v-text-field> 
+      <v-horizontal-layout style-name="wrapping" spacing="true"> 
+       <v-text-field caption="Zip" width="8em"></v-text-field> 
+       <v-combo-box caption="City"></v-combo-box> 
+       <v-combo-box caption="Country"></v-combo-box> 
+      </v-horizontal-layout> 
+      <v-horizontal-layout caption="Phone" spacing="true"> 
+       <v-text-field width="3em"></v-text-field> 
+       <v-text-field width="12em"></v-text-field> 
+       <v-check-box caption="Mobile" :middle=""></v-check-box> 
+      </v-horizontal-layout> 
+      <v-horizontal-layout spacing="true"> 
+       <v-text-field width="3em"></v-text-field> 
+       <v-text-field width="12em"></v-text-field> 
+       <v-check-box caption="Mobile" :middle=""></v-check-box> 
+      </v-horizontal-layout> 
+     </v-vertical-layout> 
+    </tab> 
+    <tab caption="Projects"> 
+     <v-table caption="Projects" width-full="true" height="269px"></v-table> 
+    </tab> 
+   </v-tab-sheet> 
+   <v-horizontal-layout width-full="true"></v-horizontal-layout> 
+   <v-horizontal-layout style-name="wrapping" spacing="true" width-full="true" :middle="" :center=""> 
+    <v-button icon="fonticon://FontAwesome/f014" style-name="danger" plain-text="" _id="deleteButton" :middle="">
+      Delete 
+    </v-button> 
+    <v-button plain-text="" _id="cancelButton" :middle="" :right="" :expand="">
+      Cancel 
+    </v-button> 
+    <v-button icon="fonticon://FontAwesome/f0c7" style-name="primary" plain-text="" _id="saveButton" :middle="" :right="">
+      Save 
+    </v-button> 
+   </v-horizontal-layout> 
+  </v-vertical-layout>  
+ </body>
+</html>
