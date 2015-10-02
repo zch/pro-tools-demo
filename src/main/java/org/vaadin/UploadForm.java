@@ -29,6 +29,7 @@ public class UploadForm extends VerticalLayout {
 
     public UploadForm() {
     	setSpacing(true);
+    	setMargin(true);
     	
     	// add Upload component
     	addComponent(upload);	
