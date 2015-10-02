@@ -2,6 +2,7 @@ package org.vaadin;
 
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Notification.Type;
+import com.vaadin.ui.Tree;
 import com.vaadin.ui.Window;
 
 public class CompanyInfo extends CompanyInfoDesign {
@@ -25,9 +26,10 @@ public class CompanyInfo extends CompanyInfoDesign {
 	}
 
 	private void close() {
-		if (getParent() instanceof Window) {
-			((Window) getParent()).close();
-		}
+			Tree tree = MyUI.getCurrent().getCompanyTree();
+			Object sel = tree.getValue();
+			tree.select(null);
+			tree.select(sel);
 	}
 
 }

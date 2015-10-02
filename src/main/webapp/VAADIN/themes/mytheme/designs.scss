@@ -142,6 +142,7 @@
 	  	width: 45px;
 	  	height: 45px;
   	}
+  	
   }
   .valo-menu-responsive .valo-menu-toggle .v-button-wrap {
   	color: white;
@@ -161,4 +162,6 @@
 .face {
 	border-radius: 50%;
   }
-
+.content {
+  		overflow: auto;
+  	}

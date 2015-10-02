@@ -15,8 +15,8 @@ import com.vaadin.addon.charts.model.DataSeries;
 import com.vaadin.addon.charts.model.DataSeriesItem;
 import com.vaadin.addon.spreadsheet.Spreadsheet;
 import com.vaadin.event.Action;
-import com.vaadin.shared.ui.window.WindowMode;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.ComponentContainer;
 import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
@@ -72,13 +72,7 @@ public class ReportView extends VerticalLayout {
     }
 
     public void openInfo() {
-        Window w = new Window();
-        w.setDraggable(false);
-        w.setResizable(false);
-        w.setSizeFull();
-        w.setModal(true);
-        w.setContent(new CompanyInfo(header.getValue()));
-        UI.getCurrent().addWindow(w);
+    	((ComponentContainer)getParent()).replaceComponent(this, new CompanyInfo(header.getValue()));
     }
     
     public void open(String name, File file) {
